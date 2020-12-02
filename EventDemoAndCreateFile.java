@@ -41,28 +41,16 @@ public class EventDemoAndCreateFile extends EventDemo {
     public static void writeEventData(Event[] events){
         String delimiter = ",";
         String s = ""; //String to fill with event info
-        Path file = Paths.get("C:\\Java\\Chapter.13\\EventData.txt"); //File for event info
+        Path file = Paths.get("EventData.txt"); //File for event info
         try{
-            if(Files.exists(file)){
-                OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, APPEND));
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
-                for(int x = 0; x < events.length; x++){
-                    s = events[x].getEventNumber() + delimiter + events[x].eventTypeNum + delimiter + events[x].getGuests() + delimiter + events[x].getPriceForEvent();
-                    writer.write(s, 0, s.length());
-                    writer.newLine();
-                }
-                writer.close();
+            OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE, APPEND));
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+            for(int x = 0; x < events.length; x++){
+                s = events[x].getEventNumber() + delimiter + events[x].eventTypeNum + delimiter + events[x].getGuests() + delimiter + events[x].getPriceForEvent();
+                writer.write(s, 0, s.length());
+                writer.newLine();
             }
-            else{
-                OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
-                for(int x = 0; x < events.length; x++){
-                    s = events[x].getEventNumber() + delimiter + events[x].eventTypeNum + delimiter + events[x].getGuests() + delimiter + events[x].getPriceForEvent();
-                    writer.write(s, 0, s.length());
-                    writer.newLine();
-                }
-                writer.close();
-            }
+            writer.close();
         }
         catch(Exception e){
             System.out.println("Message: " + e);

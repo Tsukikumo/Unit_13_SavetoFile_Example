@@ -16,7 +16,7 @@ import java.util.*;
 
 public class DisplayEventFile {
     public static void main(String[] args) {
-        Path file = Paths.get("C:\\Java\\Chapter.13\\EventData.txt"); //File for event information
+        Path file = Paths.get("EventData.txt"); //File for event information
         String s = ""; //string to fill with event info
         String delimiter = ",";
         String[] array = new String[4]; //array to fill with pieces of event info
@@ -29,7 +29,6 @@ public class DisplayEventFile {
                 InputStream input = new BufferedInputStream(Files.newInputStream(file));
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                 s = reader.readLine();
-
                 while (s != null){
                     array = s.split(delimiter);
                     eventNum = array[0];
