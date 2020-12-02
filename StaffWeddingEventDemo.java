@@ -13,24 +13,24 @@
 import java.util.*;
 
 public class StaffWeddingEventDemo extends WeddingEventDemo {
-    public static void main(String[] args) {
-        //creates 1 wedding event based on user input
-        WeddingEvent[] weddings = new WeddingEvent [1];
+    // public static void main(String[] args) {
+    //     //creates 1 wedding event based on user input
+    //     WeddingEvent[] weddings = new WeddingEvent [1];
 
-        //gets all the details for the wedding  
-        getWeddingDetails(weddings);
+    //     //gets all the details for the wedding  
+    //     getWeddingDetails(weddings);
 
-        //Displays the event, menu, & employee details
-        for(int i = 0; i < weddings.length; i++){
-            displayDetails(weddings[i]);
-            System.out.println(weddings[i].getMenu());
-            System.out.println("Your employees will be: ");
-            showEmployeeDetails(weddings[i].getEmployees());
-        }
+    //     //Displays the event, menu, & employee details
+    //     for(int i = 0; i < weddings.length; i++){
+    //         displayDetails(weddings[i]);
+    //         System.out.println(weddings[i].getMenu());
+    //         System.out.println("Your employees will be: ");
+    //         showEmployeeDetails(weddings[i].getEmployees());
+    //     }
 
-        System.out.println();
-        System.out.println("Thank you! Events have been set!");
-    }
+    //     System.out.println();
+    //     System.out.println("Thank you! Events have been set!");
+    // }
     
 
     /**
