@@ -36,7 +36,7 @@ public class DisplayEventFile {
                     guests = Integer.parseInt(array[2]);
                     price = Double.parseDouble(array[3]);
                     System.out.println("Event # " + eventNum);
-                    System.out.println("Event type number: " + type);
+                    System.out.println("Event type number: " + type + " - " + Event.EVENT_TYPES[type]);
                     System.out.println("Guest count: " + guests);
                     System.out.println("Price : $" + price);
                     System.out.println();
